@@ -19,7 +19,6 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { toast } from "./ui/use-toast";
-import { ToastAction } from "./ui/toast";
 
 export const Icons = {
     spinner: Loader2,
