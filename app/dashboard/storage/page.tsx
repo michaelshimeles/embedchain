@@ -34,7 +34,7 @@ const Storage: React.FC<StorageProps> = ({ }) => {
                     </TableRow>
                 </TableHeader>
                 {[...data?.response]?.reverse()?.map((info: any) => (
-                    <TableBody>
+                    <TableBody key={info?.id}>
                         <TableRow>
                             <TableCell className="font-medium">{info?.id}</TableCell>
                             <TableCell>{info?.name}</TableCell>

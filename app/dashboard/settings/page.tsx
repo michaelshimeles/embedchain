@@ -3,11 +3,8 @@ import { Input } from '@/components/ui/input';
 import React from 'react'
 import { useUser } from '@clerk/nextjs';
 import { Label } from '@/components/ui/label';
-interface pageProps {
 
-}
-
-const page: React.FC<pageProps> = ({ }) => {
+const Settings = ({ }) => {
     const { user } = useUser()
     return (
         <div className='flex flex-col p-8 gap-2'>
@@ -25,4 +22,4 @@ const page: React.FC<pageProps> = ({ }) => {
         </div>);
 }
 
-export default page;
+export default Settings;
