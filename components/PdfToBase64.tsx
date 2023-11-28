@@ -89,7 +89,7 @@ const PdfToBase64: React.FC = () => {
         const date = new Date().toLocaleTimeString()
 
         try {
-            const response = await fetch("/api/storage", {
+            const response = await fetch("/api/storage/create", {
                 method: "POST",
                 body: JSON.stringify({
                     name: data?.name,

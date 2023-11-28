@@ -30,13 +30,10 @@ export default function DashboardLayout({ children }: any) {
                 </div>
             </div>
             <div className="flex flex-col overflow-auto">
-                <header className="sticky top-0 flex min-h-[60px] items-center border-b bg-white px-6 dark:bg-black z-10">
+                <header className="-translate-x-5 lg:hidden sticky top-0 flex min-h-[60px] items-center border-b bg-white px-6 dark:bg-black z-10">
                     <Suspense fallback={<svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>}>
                         <MobileNavMenu />
                     </Suspense>
-                    <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-                        <p>Welcome, {user?.firstName}</p>
-                    </div>
                 </header>
                 <Suspense fallback={<svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>}>
                     {children}

@@ -9,22 +9,8 @@ const MobileNavMenu = () => {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button className="-translate-x-1 lg:hidden" size="icon" variant="ghost">
-                    <svg
-                        className=" h-5 w-5"
-                        fill="none"
-                        height="24"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <rect height="18" rx="2" ry="2" width="18" x="3" y="3" />
-                        <line x1="15" x2="15" y1="3" y2="21" />
-                    </svg>
+                <Button className="lg:hidden" size="icon" variant="ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
                     <span className="sr-only">Toggle navigation menu</span>
                 </Button>
             </SheetTrigger>
@@ -32,23 +18,8 @@ const MobileNavMenu = () => {
                 <div className="flex flex-col gap-2">
                     <div className="flex h-[60px] items-center px-6">
                         <Link className="flex items-center gap-2 font-semibold" href="#">
-                            <svg
-                                className=" h-6 w-6"
-                                fill="none"
-                                height="24"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
-                                width="24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
-                                <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9" />
-                                <path d="M12 3v6" />
-                            </svg>
-                            <span className="">Social Pal</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-replace"><path d="M14 4c0-1.1.9-2 2-2" /><path d="M20 2c1.1 0 2 .9 2 2" /><path d="M22 8c0 1.1-.9 2-2 2" /><path d="M16 10c-1.1 0-2-.9-2-2" /><path d="m3 7 3 3 3-3" /><path d="M6 10V5c0-1.7 1.3-3 3-3h1" /><rect width="8" height="8" x="2" y="14" rx="2" /></svg>
+                            <span>EmbedChain</span>
                         </Link>
                     </div>
                     <div className="flex-1">

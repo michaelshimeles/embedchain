@@ -37,7 +37,7 @@ export function NavBar() {
 
     return (
         <div className="flex min-w-full justify-between p-2 border-b z-10">
-            <Dialog>
+            {/* <Dialog>
                 <SheetTrigger className="min-[825px]:hidden p-2 transition">
                     <GiHamburgerMenu />
                 </SheetTrigger>
@@ -61,10 +61,10 @@ export function NavBar() {
                         </DialogClose>
                     </div>
                 </SheetContent>
-            </Dialog>
+            </Dialog> */}
 
             <NavigationMenu>
-                <NavigationMenuList className="max-[825px]:hidden ">
+                <NavigationMenuList>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref className="cursor-pointer">
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
