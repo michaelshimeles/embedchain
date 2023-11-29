@@ -1,19 +1,19 @@
 "use client"
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { usePathname } from 'next/navigation'
+import Link from 'next/link';
 
 const Dashboard = ({ }) => {
-    const pathname = usePathname()
 
     return (
-        <div className='flex flex-col items-end p-6'>
-            <Link href="/">
-                <Button>Home</Button>
-            </Link>
-            <div className='flex flex-col items-start w-full mt-3'>
-                Current Pathname: {pathname}
+        <div className='flex flex-col w-full p-6'>
+            <div className='flex justify-end'>
+                <Link href="/">
+                    <Button>Home</Button>
+                </Link>
             </div>
+            <h2 className="mt-3 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+                How it works
+            </h2>
         </div>
     );
 }

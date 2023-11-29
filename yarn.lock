@@ -1046,6 +1046,11 @@
     "@typescript-eslint/types" "6.7.3"
     eslint-visitor-keys "^3.4.1"
 
+"@unkey/api@^0.12.1":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@unkey/api/-/api-0.12.1.tgz#7bacc92ea9ea10aa6c7d22706b9a2eec3c552ccb"
+  integrity sha512-hKMbXebeQ2sExRb4AqLDrodW1trdiC/3oUjzdp4kZsgTSt/kOtoPeZjf/5dxzXdre+5zhihETumwDw/JU7yvOQ==
+
 "@upstash/core-analytics@^0.0.6":
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/@upstash/core-analytics/-/core-analytics-0.0.6.tgz#8680e7697e0f2660c2507bbc56348f5541bb0237"

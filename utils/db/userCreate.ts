@@ -3,10 +3,7 @@ import { cookies } from "next/headers";
 import { z } from "zod";
 
 const userCreateSchema = z.object({
-  email: z
-    .string()
-    .email({ message: "Invalid email" })
-    .describe("user email"),
+  email: z.string().email({ message: "Invalid email" }).describe("user email"),
   first_name: z
     .string()
     .regex(/^[a-zA-Z]+$/, { message: "First name must only contain letters" })
@@ -17,15 +14,14 @@ const userCreateSchema = z.object({
     .regex(/^[a-zA-Z]+$/, { message: "Last name must only contain letters" })
     .min(3, { message: "Last name is required" })
     .describe("user last name"),
-  gender: z
-    .enum(["Male", "Female", "Preferred not to say"])
-    .describe("user gender"),
   profile_image_url: z
     .string()
     .url({ message: "Invalid URL" })
     .optional()
     .describe("user profile image URL"),
   user_id: z.string().describe("user ID"),
+  apiKey: z.string().describe("api key"),
+  apiKey_id: z.string().describe("api key id"),
 });
 
 type userCreateProps = z.infer<typeof userCreateSchema>;
@@ -34,9 +30,10 @@ export const userCreate = async ({
   email,
   first_name,
   last_name,
-  gender,
   profile_image_url,
   user_id,
+  apiKey,
+  apiKey_id
 }: userCreateProps) => {
   const supabase = createServerComponentClient({ cookies });
 
@@ -48,9 +45,10 @@ export const userCreate = async ({
           email,
           first_name,
           last_name,
-          gender,
           profile_image_url,
           user_id,
+          apiKey,
+          apiKey_id
         },
       ])
       .select();

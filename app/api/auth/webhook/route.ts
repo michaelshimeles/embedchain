@@ -1,3 +1,4 @@
+import { unkey } from "@/utils/constants/apiKey";
 import { userCreate } from "@/utils/db/userCreate";
 import { userUpdate } from "@/utils/db/userUpdate";
 import { WebhookEvent } from "@clerk/nextjs/server";
@@ -56,14 +57,37 @@ export async function POST(req: Request) {
 
   if (eventType === "user.created") {
     try {
+
+      // create api key
+      const created = await unkey.keys.create({
+        apiId: "api_EynWSUNephCDFaZPjCJsTW",
+        prefix: "emb",
+        byteLength: 16,
+        ownerId: payload?.data?.id,
+        name: payload?.data?.first_name,
+        meta: {
+          billingTier: "FREE",
+        },
+        //   expires: 1686941966471,
+        ratelimit: {
+          type: "fast",
+          limit: 10,
+          refillRate: 1,
+          refillInterval: 1000,
+        },
+        remaining: 1000,
+      });
+
       await userCreate({
         email: payload?.data?.email_addresses?.[0]?.email_address,
         first_name: payload?.data?.first_name,
         last_name: payload?.data?.last_name,
-        gender: payload?.data?.gender,
         profile_image_url: payload?.data?.profile_image_url,
         user_id: payload?.data?.id,
+        apiKey: created?.result?.key!,
+        apiKey_id: created?.result?.keyId!,
       });
+
     } catch (error: any) {
       throw new Error(error.message);
     }
@@ -79,10 +103,9 @@ export async function POST(req: Request) {
         profile_image_url: payload?.data?.profile_image_url,
         user_id: payload?.data?.id,
       });
+    } catch (error: any) {
+      throw new Error(error.message);
     }
-     catch (error: any) {
-    throw new Error(error.message);
-  }
   }
   return new Response("", { status: 201 });
 }

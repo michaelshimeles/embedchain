@@ -103,7 +103,7 @@ const PdfToBase64: React.FC = () => {
             console.log("Result", result)
             toast({
                 title: `Successfully stored`,
-                description: `Embedding stored as ${data?.name} at ${JSON.stringify(date)}`,
+                description: `Embedding stored as ${data?.name} at ${date}`,
             })
 
             setStored(true)
@@ -111,7 +111,7 @@ const PdfToBase64: React.FC = () => {
         } catch (error) {
             toast({
                 title: `Failed storing`,
-                description: `Embedding stored as ${data?.name} at ${JSON.stringify(date)}`,
+                description: `Embedding stored as ${data?.name} at ${date}`,
                 variant: "destructive"
             })
             return error
