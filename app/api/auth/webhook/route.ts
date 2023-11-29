@@ -64,7 +64,7 @@ export async function POST(req: Request) {
         prefix: "emb",
         byteLength: 16,
         ownerId: payload?.data?.id,
-        name: payload?.data?.first_name,
+        name: `${payload?.data?.first_name} + " " ${payload?.data?.last_name}`,
         meta: {
           billingTier: "FREE",
         },

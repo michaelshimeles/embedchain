@@ -100,7 +100,6 @@ const PdfToBase64: React.FC = () => {
 
             const result = await response?.json()
 
-            console.log("Result", result)
             toast({
                 title: `Successfully stored`,
                 description: `Embedding stored as ${data?.name} at ${date}`,
@@ -120,7 +119,10 @@ const PdfToBase64: React.FC = () => {
 
     return (
         <div className='flex flex-col justify-center w-[100%] gap-3'>
-            <input className='border w-[30rem] p-4 rounded-md' type="file" onChange={handleFileChange} accept="application/pdf" />
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="pdf">PDF</Label>
+                <Input id="pdf" type="file" onChange={handleFileChange} accept="application/pdf"/>
+            </div>
             {base64String && (
                 <div className='flex flex-col gap-3'>
                     <p>Base64 String</p>

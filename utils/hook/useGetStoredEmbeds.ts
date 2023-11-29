@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-async function fetchStoredEmbeds(user_id: string) {
+async function fetchStoredEmbeds() {
   try {
     const response = await fetch("/api/storage/read");
 
@@ -15,6 +15,6 @@ async function fetchStoredEmbeds(user_id: string) {
 export const useGetStoredEmbeds = (user_id: string) => {
   return useQuery({
     queryKey: ["get-embeds", user_id],
-    queryFn: () => fetchStoredEmbeds(user_id),
+    queryFn: () => fetchStoredEmbeds(),
   });
 };
