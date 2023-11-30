@@ -55,6 +55,9 @@ export async function POST(req: Request) {
   const { id } = evt.data;
   const eventType = evt.type;
 
+  let firstName = payload?.data?.first_name;
+  let lastName = payload?.data?.last_name;
+
   if (eventType === "user.created") {
     try {
       // create api key
@@ -63,7 +66,7 @@ export async function POST(req: Request) {
         prefix: "emb",
         byteLength: 16,
         ownerId: payload?.data?.id,
-        name: `${payload?.data?.first_name} ${payload?.data?.last_name}`,
+        name: `${firstName} ${lastName ? lastName : ""}`,
         meta: {
           billingTier: "FREE",
         },
@@ -87,7 +90,6 @@ export async function POST(req: Request) {
         apiKey_id: created?.result?.keyId!,
         tier: "FREE",
       });
-      
     } catch (error: any) {
       throw new Error(error.message);
     }
