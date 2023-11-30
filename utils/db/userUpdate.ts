@@ -3,34 +3,23 @@ import { cookies } from "next/headers";
 import { z } from "zod";
 
 const userUpdateSchema = z.object({
-  email: z
-    .string()
-    .email({ message: "Invalid email" })
-    .nonempty({ message: "Email is required" })
-    .describe("user email"),
+  email: z.string().email({ message: "Invalid email" }).describe("user email"),
   first_name: z
     .string()
     .regex(/^[a-zA-Z]+$/, { message: "First name must only contain letters" })
-    .nonempty({ message: "First name is required" })
+    .min(3, { message: "First name is required" })
     .describe("user first name"),
   last_name: z
     .string()
     .regex(/^[a-zA-Z]+$/, { message: "Last name must only contain letters" })
-    .nonempty({ message: "Last name is required" })
+    .min(3, { message: "Last name is required" })
     .describe("user last name"),
-  gender: z
-    .enum(["Male", "Female", "Non-Binary", "Other"])
-    .optional()
-    .describe("user gender"),
   profile_image_url: z
     .string()
     .url({ message: "Invalid URL" })
     .optional()
     .describe("user profile image URL"),
-  user_id: z
-    .string()
-    .nonempty({ message: "User ID is required" })
-    .describe("user ID"),
+  user_id: z.string().describe("user ID"),
 });
 
 type userUpdateProps = z.infer<typeof userUpdateSchema>;
@@ -39,7 +28,6 @@ export const userUpdate = async ({
   email,
   first_name,
   last_name,
-  gender,
   profile_image_url,
   user_id,
 }: userUpdateProps) => {
@@ -53,7 +41,6 @@ export const userUpdate = async ({
           email,
           first_name,
           last_name,
-          gender,
           profile_image_url,
           user_id,
         },

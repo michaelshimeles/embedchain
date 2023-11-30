@@ -22,6 +22,7 @@ const userCreateSchema = z.object({
   user_id: z.string().describe("user ID"),
   apiKey: z.string().describe("api key"),
   apiKey_id: z.string().describe("api key id"),
+  tier: z.string().describe("tier"),
 });
 
 type userCreateProps = z.infer<typeof userCreateSchema>;
@@ -33,7 +34,8 @@ export const userCreate = async ({
   profile_image_url,
   user_id,
   apiKey,
-  apiKey_id
+  apiKey_id,
+  tier,
 }: userCreateProps) => {
   const supabase = createServerComponentClient({ cookies });
 
@@ -48,7 +50,8 @@ export const userCreate = async ({
           profile_image_url,
           user_id,
           apiKey,
-          apiKey_id
+          apiKey_id,
+          tier,
         },
       ])
       .select();
