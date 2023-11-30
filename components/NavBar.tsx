@@ -72,13 +72,6 @@ export function NavBar() {
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/contact-us" legacyBehavior passHref className="cursor-pointer">
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Contact Us
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
             <div className="flex items-center gap-3">

@@ -9,7 +9,7 @@ export default function Pricing() {
   console.log("user", isSignedIn)
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center">
+    <section className="mt-[4rem] w-full flex items-center justify-center">
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-3 md:gap-8">
           <div className="flex flex-col p-6 shadow-lg rounded-lg  justify-between border border-gray-300">
