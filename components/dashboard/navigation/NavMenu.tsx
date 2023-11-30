@@ -7,8 +7,8 @@ const NavMenu = ({ }) => {
     const pathname = usePathname()
 
     return (
-        <nav className="flex flex-col pb-2 h-[100%] justify-between items-start px-4 text-sm font-medium">
-            <div>
+        <nav className="flex flex-col pb-2 h-full w-full justify-between items-start px-4 text-sm font-medium">
+            <div className='flex flex-col  w-full'>
                 {pathname !== "/dashboard/generate" ?
                     <Link
                         className="flex items-center gap-3 rounded-lg px-3 py-2 text-zinc-500 transition-all hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"

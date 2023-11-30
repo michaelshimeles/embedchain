@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }: any) {
     const { user } = useUser();
 
     return (
-        <div className="grid h-screen min-h-screen w-full overflow-hidden lg:grid-cols-[280px_1fr] ">
+        <div className="grid  min-h-screen w-full overflow-hidden lg:grid-cols-[280px_1fr] ">
             <div className="hidden border-r bg-zinc-100/40 lg:block dark:bg-zinc-800/40">
                 <div className="flex flex-col gap-2 h-[100%]">
                     <div className="flex h-[60px] items-center px-6">
@@ -29,7 +29,7 @@ export default function DashboardLayout({ children }: any) {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col min-h-screen overflow-auto">
+            <div className="flex flex-col h-full overflow-auto">
                 <header className="-translate-x-5 lg:hidden sticky top-0 flex min-h-[60px] items-center border-b bg-white px-6 dark:bg-black z-10">
                     <Suspense fallback={<svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>}>
                         <MobileNavMenu />

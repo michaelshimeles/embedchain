@@ -113,7 +113,7 @@ export default function Pricing() {
               </ul>
             </div>
             <div className="mt-6">
-              <Link href="https://cal.com/michaelshimeles/15min">
+              <Link href="https://cal.com/michaelshimeles/15min" target="_blank">
                 <Button className="w-full">Contact Us</Button>
               </Link>
             </div>
