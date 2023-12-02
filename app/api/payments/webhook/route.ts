@@ -91,12 +91,24 @@ export async function POST(req: NextRequest) {
         );
 
         // Then define and call a function to handle the event subscription_schedule.canceled
-        break;
+        break;        
       case "customer.subscription.updated":
         const subscriptionScheduleUpdated = event.data.object;
         console.log("subscriptionScheduleUpdated", subscriptionScheduleUpdated);
 
         // Then define and call a function to handle the event subscription_schedule.canceled
+        break;
+      case "payment_method.attached":
+        const paymentMethodAttached = event.data.object;
+        console.log("paymentMethodAttached", paymentMethodAttached);
+        break;
+      case "customer.created":
+        const customerCreated = event.data.object;
+        console.log("customerCreated", customerCreated);
+        break;
+      case "customer.updated":
+        const customerUpdated = event.data.object;
+        console.log("customerCreated", customerUpdated);
         break;
 
       // ... handle other event types

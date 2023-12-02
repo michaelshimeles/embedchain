@@ -29,7 +29,7 @@ const Dashboard = ({ }) => {
                 <div className='flex flex-col mt-4 gap-3'>
                     <code className='flex px-4 py-2 border rounded-full'>
                         <p>
-                            const response = await fetch(&quot;https://embedchain.vercel.app/api/embed&quot;, {
+                            const response = await fetch(&quot;https://embed.michaelshimeles.com/api/embed&quot;, {
                                 `headers: {
                                 "x-api-key": API_KEY
                             }`
@@ -38,7 +38,7 @@ const Dashboard = ({ }) => {
                     </code>
                     <code className='flex px-4 py-2 border rounded-full'>
                         <p>
-                            curl -H &quot;x-api-key: API_KEY&quot; &quot;https://embedchain.vercel.app/api/embed&quot;
+                            curl -H &quot;x-api-key: API_KEY&quot; &quot;https://embed.michaelshimeles.com/api/embed&quot;
                         </p>
                     </code>
                 </div>
