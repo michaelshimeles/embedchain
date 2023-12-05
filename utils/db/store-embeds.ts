@@ -6,6 +6,7 @@ const storeEmbeddingsSchema = z.object({
   user_id: z.string().describe("user ID"),
   name: z.string(),
   embeddings: z.string(),
+  perma_link: z.string(),
 });
 
 type storeEmbeddingsProps = z.infer<typeof storeEmbeddingsSchema>;
@@ -14,6 +15,7 @@ export const storeEmbeddings = async ({
   user_id,
   name,
   embeddings,
+  perma_link,
 }: storeEmbeddingsProps) => {
   const supabase = createServerComponentClient({ cookies });
 
@@ -25,10 +27,11 @@ export const storeEmbeddings = async ({
           user_id,
           name,
           embeddings,
+          perma_link,
         },
       ])
       .select();
-      
+
     if (error?.code) return error;
 
     return data;
