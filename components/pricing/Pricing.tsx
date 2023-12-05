@@ -4,9 +4,9 @@ import { useUser } from "@clerk/nextjs"
 import Link from "next/link"
 
 export default function Pricing() {
-  const { isSignedIn } = useUser()
+  const { isSignedIn, user } = useUser()
 
-  console.log("user", isSignedIn)
+  console.log("user", user?.id)
 
   return (
     <section className="mt-[4rem] w-full flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function Pricing() {
             </div>
             {isSignedIn
               ?
-              <Link href="https://buy.stripe.com/test_00g5m900YgNR3JK000">
+              <Link href={`https://buy.stripe.com/test_00g5m900YgNR3JK000?prefilled_email=${user?.emailAddresses?.[0]?.emailAddress.split("@")[0]}%40gmail.com&client_reference_id=${user?.id}`}>
                 <div className="mt-6">
                   <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500">Get Started</Button>
                 </div>

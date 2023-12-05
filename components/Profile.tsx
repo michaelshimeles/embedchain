@@ -17,13 +17,12 @@ import { SignOutButton, useUser } from "@clerk/nextjs"
 import {
     CreditCard,
     LogOut,
-    Settings,
     User
 } from "lucide-react"
 import Link from "next/link"
 
 export function Profile() {
-    const { isSignedIn, user, isLoaded } = useUser();
+    const { user } = useUser();
 
     return (
         <DropdownMenu>
@@ -46,7 +45,7 @@ export function Profile() {
                     </Link>
                     <Link href="https://billing.stripe.com/p/login/test_7sIeYTfmV5wDb604gg">
                         <DropdownMenuItem>
-                            <Settings className="mr-2 h-4 w-4" />
+                            <CreditCard className="mr-2 h-4 w-4" />
                             <span>Payments</span>
                             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                         </DropdownMenuItem>

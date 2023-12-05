@@ -19,7 +19,6 @@ export default function Home() {
             <Button>Dashboard</Button>
           </Link>
         </div>
-        <Pricing />
       </div>
     </main>
   )

@@ -1,10 +1,8 @@
 "use client"
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { CodeBlock } from '@skeletonlabs/skeleton';
 
-const Dashboard = ({ }) => {
-
+const Dashboard = () => {
     return (
         <div className='flex flex-col w-full p-6'>
             <div className='flex justify-end'>

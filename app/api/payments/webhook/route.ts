@@ -1,4 +1,5 @@
 import { registerPayment } from "@/utils/db/register-payment";
+import { userUpdate } from "@/utils/db/userUpdate";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
@@ -91,11 +92,31 @@ export async function POST(req: NextRequest) {
         );
 
         // Then define and call a function to handle the event subscription_schedule.canceled
-        break;        
+        break;
       case "customer.subscription.updated":
         const subscriptionScheduleUpdated = event.data.object;
-        console.log("subscriptionScheduleUpdated", subscriptionScheduleUpdated);
+        console.log(
+          "subscriptionScheduleUpdated",
+          subscriptionScheduleUpdated?.items?.data
+        );
+        if (!subscriptionScheduleUpdated?.cancel_at) {
+          // Subscription cancelled
+          // customer.subscription.updated
+          /*
+            if cancel_at is not null
+            then it was a cancellation
+            user will go back to free tier after duration is over
+            plan turns to free tier at cancel_at
+          */
+        }
 
+        if (subscriptionScheduleUpdated?.cancel_at === null) {
+          /*
+              if cancel_at is null
+              then it was an update
+              change user tier right away
+          */
+        }
         // Then define and call a function to handle the event subscription_schedule.canceled
         break;
       case "payment_method.attached":

@@ -1,5 +1,4 @@
-chargeSucceeded 
-{
+chargeSucceeded {
     id: 'ch_3OIPeOKCuFqcLnh80k1egerJ',
     object: 'charge',
     amount: 5000,
