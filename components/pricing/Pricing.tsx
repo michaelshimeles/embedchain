@@ -25,11 +25,7 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-center">
                   <IconCheck className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                  10 PDFs stored forever
-                </li>
-                <li className="flex items-center">
-                  <IconCheck className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                  100 requests per day
+                  10 PDFs stored forever (per month)
                 </li>
               </ul>
             </div>
@@ -64,11 +60,7 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-center">
                   <IconCheck className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                  1000 PDFs stored forever
-                </li>
-                <li className="flex items-center">
-                  <IconCheck className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                  1000 requests per day
+                  1000 PDFs stored forever (per month)
                 </li>
               </ul>
             </div>
@@ -101,10 +93,6 @@ export default function Pricing() {
                 <li className="flex items-center">
                   <IconCheck className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
                   Unlimited PDFs stored forever
-                </li>
-                <li className="flex items-center">
-                  <IconCheck className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
-                  Unlimited API requests
                 </li>
                 <li className="flex items-center">
                   <IconCheck className="text-white text-xs bg-green-500 rounded-full mr-2 p-1" />
