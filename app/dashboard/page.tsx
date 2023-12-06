@@ -25,8 +25,8 @@ const Dashboard = () => {
                 <br />
                 <p>Fetch your embeddings:</p>
                 <div className='flex flex-col mt-4 gap-3'>
-                    <code className='flex px-4 py-2 border rounded-full'>
-                        <p>
+                    <code className='flex px-4 py-2 border rounded-full w-fit'>
+                        <p className='text-sm'>
                             const response = await fetch(&quot;https://embed.michaelshimeles.com/api/embed&quot;, {
                                 `headers: {
                                 "x-api-key": API_KEY
@@ -34,8 +34,8 @@ const Dashboard = () => {
                             })
                         </p>
                     </code>
-                    <code className='flex px-4 py-2 border rounded-full'>
-                        <p>
+                    <code className='flex px-4 py-2 border rounded-full w-fit'>
+                        <p className='text-sm'>
                             curl -H &quot;x-api-key: API_KEY&quot; &quot;https://embed.michaelshimeles.com/api/embed&quot;
                         </p>
                     </code>
