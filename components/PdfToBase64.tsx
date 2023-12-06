@@ -122,7 +122,7 @@ const PdfToBase64: React.FC = () => {
         <div className='flex flex-col justify-center w-[100%] gap-3'>
             <div className="grid w-full max-w-sm items-center gap-1.5 ">
                 <Label htmlFor="pdf">PDF</Label>
-                <Input id="pdf" type="file" className="hover:cursor-pointer" onChange={handleFileChange} accept="application/pdf" />
+                <Input id="pdf" type="file" className="hover:cursor-pointer h-[10rem] pt-[1rem]" onChange={handleFileChange} accept="application/pdf" />
             </div>
             {base64String && (
                 <div className='flex flex-col gap-3'>

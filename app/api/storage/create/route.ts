@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { NextRequest, NextResponse } from "next/server";
 import Arweave from "arweave";
 import { JWKInterface } from "arweave/node/lib/wallet";
-
+import { encryptText } from "@/utils/encryption/encrypt";
 export async function POST(req: NextRequest) {
   // #1 Get the data from the POST request; encoded as base64 string.
   const { name, embeddings } = await req.json();
@@ -25,6 +25,9 @@ export async function POST(req: NextRequest) {
     console.log("remaining", remaining);
     return NextResponse.json("Rate Limited", { status: 429 });
   }
+  const embeddingsString = JSON.stringify(embeddings);
+
+  const encryptedData = encryptText(embeddingsString, userId)
 
   try {
     // #2 Make a connection to Arweave server; following standard example.
@@ -55,7 +58,7 @@ export async function POST(req: NextRequest) {
 
     // #5 Core flow: create a transaction, upload and wait for the status!
     let transaction = await arweave.createTransaction(
-      { data: String(embeddings) },
+      { data: String(encryptedData) },
       arweaveKey
     );
 
