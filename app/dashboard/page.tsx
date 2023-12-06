@@ -1,8 +1,14 @@
 "use client"
 import { Button } from '@/components/ui/button';
+import { useGetStoredEmbeds } from '@/utils/hook/useGetStoredEmbeds';
 import Link from 'next/link';
-
+import { useUser } from "@clerk/nextjs"
 const Dashboard = () => {
+    const { user } = useUser()
+    const { data, error } = useGetStoredEmbeds(user?.id!)
+
+
+    console.log("data", data?.response?.length)
     return (
         <div className='flex flex-col w-full p-6'>
             <div className='flex justify-end'>
@@ -10,9 +16,6 @@ const Dashboard = () => {
                     <Button>Home</Button>
                 </Link>
             </div>
-            <h2 className="mt-3 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-                How it works
-            </h2>
             <div className='mt-4'>
                 <div className='flex items-center gap-1'>
                     <p>Get your API key from
@@ -40,6 +43,8 @@ const Dashboard = () => {
                         </p>
                     </code>
                 </div>
+                <br />
+                <p>Total Embeddings: {data?.response?.length}</p>
             </div>
 
         </div>
