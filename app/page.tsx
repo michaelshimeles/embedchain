@@ -19,6 +19,9 @@ export default function Home() {
             <Button>Dashboard</Button>
           </Link>
         </div>
+        <div className="pt-5">
+          <iframe frameBorder="0" width="900" height="560" src="https://www.youtube.com/embed/KRNDRT4WDiE?si=sRBbDsOVSSlN0qh7" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        </div>
       </div>
     </main>
   )

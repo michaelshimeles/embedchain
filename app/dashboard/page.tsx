@@ -30,7 +30,7 @@ const Dashboard = () => {
                 <div className='flex flex-col mt-4 gap-3'>
                     <code className='flex px-4 py-2 border rounded-full w-fit'>
                         <p className='text-sm'>
-                            const response = await fetch(&quot;https://embed.michaelshimeles.com/api/embed&quot;, {
+                            const response = await fetch(&quot;https://embed.michaelshimeles.com/api/embeds&quot;, {
                                 `headers: {
                                 "x-api-key": API_KEY
                             }`
@@ -39,7 +39,7 @@ const Dashboard = () => {
                     </code>
                     <code className='flex px-4 py-2 border rounded-full w-fit'>
                         <p className='text-sm'>
-                            curl -H &quot;x-api-key: API_KEY&quot; &quot;https://embed.michaelshimeles.com/api/embed&quot;
+                            curl -H &quot;x-api-key: API_KEY&quot; &quot;https://embed.michaelshimeles.com/api/embeds&quot;
                         </p>
                     </code>
                 </div>
