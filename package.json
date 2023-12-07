@@ -29,6 +29,7 @@
     "@unkey/api": "^0.12.1",
     "@upstash/ratelimit": "^0.4.4",
     "@upstash/redis": "^1.25.1",
+    "@vercel/analytics": "^1.1.1",
     "arweave": "^1.14.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
