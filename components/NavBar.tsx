@@ -46,13 +46,13 @@ export function NavBar() {
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
-                    <NavigationMenuItem>
+                    {/* <NavigationMenuItem>
                         <Link href="/pricing" legacyBehavior passHref className="cursor-pointer">
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Pricing
                             </NavigationMenuLink>
                         </Link>
-                    </NavigationMenuItem>
+                    </NavigationMenuItem> */}
                 </NavigationMenuList>
             </NavigationMenu>
             <div className="flex items-center gap-3">

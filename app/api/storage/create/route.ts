@@ -45,7 +45,6 @@ export async function POST(req: NextRequest) {
     const arweaveWalletBallance = await arweave.wallets.getBalance(
       arweaveWallet
     );
-    console.log("arweaveWalletBallance", arweaveWalletBallance);
 
     if (arweaveWalletBallance === "0") {
       return NextResponse.json(
@@ -67,7 +66,6 @@ export async function POST(req: NextRequest) {
 
     await arweave.transactions.sign(transaction, arweaveKey);
     const res = await arweave.transactions.post(transaction);
-    console.log("res", res);
 
     if (res?.status === 400) {
       return NextResponse.json(
@@ -80,9 +78,6 @@ export async function POST(req: NextRequest) {
     }
 
     const status = await arweave.transactions.getStatus(transaction.id);
-
-    console.log("status", status);
-    console.log("status", `https://www.arweave.net/${transaction.id}`);
 
     try {
       const response = await storeEmbeddings({

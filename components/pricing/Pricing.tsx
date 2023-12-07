@@ -6,8 +6,6 @@ import Link from "next/link"
 export default function Pricing() {
   const { isSignedIn, user } = useUser()
 
-  console.log("user", user?.id)
-
   return (
     <section className="mt-[4rem] w-full flex items-center justify-center">
       <div className="container px-4 md:px-6">

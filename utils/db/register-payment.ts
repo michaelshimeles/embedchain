@@ -35,8 +35,6 @@ export const registerPayment = async (
       ])
       .select();
 
-    console.log("data", data);
-    console.log("error", error);
     if (data) {
       return {
         message: "success",

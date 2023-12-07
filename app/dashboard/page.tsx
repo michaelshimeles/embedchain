@@ -7,8 +7,6 @@ const Dashboard = () => {
     const { user } = useUser()
     const { data, error } = useGetStoredEmbeds(user?.id!)
 
-
-    console.log("data", data?.response?.length)
     return (
         <div className='flex flex-col w-full p-6'>
             <div className='flex justify-end'>
