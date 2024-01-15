@@ -2,6 +2,7 @@ import { NavBar } from "@/components/NavBar";
 import Pricing from "@/components/pricing/Pricing";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Video from 'next-video';
 
 export default function Home() {
   return (
@@ -19,8 +20,8 @@ export default function Home() {
             <Button>Dashboard</Button>
           </Link>
         </div>
-        <div className="pt-5">
-          <iframe frameBorder="0" width="900" height="560" src="https://www.youtube.com/embed/KRNDRT4WDiE?si=sRBbDsOVSSlN0qh7" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        <div className="pt-5 w-[60rem]">
+          <Video src={"https://mrhirufvbnthpmbpxkvu.supabase.co/storage/v1/object/public/files/Vector.mp4?t=2024-01-15T07%3A59%3A54.718Z"} />
         </div>
       </div>
     </main>
