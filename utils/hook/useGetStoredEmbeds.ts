@@ -20,10 +20,10 @@ async function fetchStoredEmbeds(userId: string) {
   }
 }
 
-export const useGetStoredEmbeds = (userId: string, response: any) => {
+export const useGetStoredEmbeds = (userId: string, result: any) => {
   return useQuery({
     queryKey: ["get-embeds", userId],
     queryFn: () => fetchStoredEmbeds(userId),
-    initialData: response,
+    initialData: result,
   });
 };

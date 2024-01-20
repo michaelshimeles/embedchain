@@ -14,7 +14,7 @@ import Link from "next/link";
 
 
 const StorageComponent = ({ result, userId }: any) => {
-    const { data, isFetched } = useGetStoredEmbeds(userId!, result?.response)
+    const { data, isFetched } = useGetStoredEmbeds(userId!, result)
 
     const responseData = data?.response;
     const reversedData = Array.isArray(responseData) ? [...responseData].reverse() : [];
