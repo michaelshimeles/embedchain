@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
 async function fetchStoredEmbeds(userId: string) {
-
   try {
     const response = await fetch("/api/storage/read", {
       method: "POST",
@@ -20,10 +19,13 @@ async function fetchStoredEmbeds(userId: string) {
   }
 }
 
+// useGetStoredEmbeds Hook
 export const useGetStoredEmbeds = (userId: string, result: any) => {
+  // console.log('result',result)
   return useQuery({
     queryKey: ["get-embeds", userId],
     queryFn: () => fetchStoredEmbeds(userId),
     initialData: result,
+    // You can add options like 'staleTime' to manage when the data should be refetched
   });
 };

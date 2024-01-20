@@ -1,6 +1,5 @@
 import { ratelimit } from "@/lib/ratelimiter";
 import { readEmbeddings } from "@/utils/db/read-embeds";
-import { auth } from "@clerk/nextjs";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {

@@ -11,16 +11,22 @@ import { Textarea } from "@/components/ui/textarea";
 import { useGetStoredEmbeds } from "@/utils/hook/useGetStoredEmbeds";
 import { Link2 } from "lucide-react";
 import Link from "next/link";
+import { Loader2 } from 'lucide-react';
 
+
+export const Icons = {
+    spinner: Loader2,
+};
 
 const StorageComponent = ({ result, userId }: any) => {
-    const { data, isFetched } = useGetStoredEmbeds(userId!, result)
+    const { data, isFetching } = useGetStoredEmbeds(userId, result);
 
-    const responseData = data?.response;
-    const reversedData = Array.isArray(responseData) ? [...responseData].reverse() : [];
+    const responseData = data?.response || [];
+    const reversedData = [...responseData].reverse();
+
     return (
         <div className="p-8">
-            {isFetched ? <Table>
+            {!isFetching ? <Table>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[100px]">ID</TableHead>
@@ -41,7 +47,7 @@ const StorageComponent = ({ result, userId }: any) => {
                         </TableRow>
                     </TableBody>
                 ))}
-            </Table> : <>Loading...</>}
+            </Table> : <div className="flex justify-center items-center w-full h-[50vh]"><Icons.spinner className="h-4 w-4 animate-spin" /></div>}
         </div>
     );
 }

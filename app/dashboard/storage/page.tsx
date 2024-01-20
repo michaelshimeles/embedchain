@@ -22,11 +22,10 @@ export default async function Page({ }) {
 
         const result = await response.json(); // Assuming the response is JSON
 
-        return (
-            <StorageComponent result={result} userId={userId}/>
-        );
-    } catch (error) {
+        return <StorageComponent result={result} userId={userId}/>;
+
+    } catch (error: any) {
         console.error("Failed to fetch data:", error);
-        return <div>Error loading data</div>;
+        return <div>Error loading data: {error.message}</div>;
     }
 }
