@@ -6,7 +6,7 @@ export default async function Page({ }) {
     const { userId }: { userId: string | null } = auth();
 
     try {
-        const response = await fetch("http://localhost:3000/api/storage/read", {
+        const response = await fetch("https://embed.michaelshimeles.com/api/storage/read", {
             method: "POST",
             body: JSON.stringify({
                 userId
