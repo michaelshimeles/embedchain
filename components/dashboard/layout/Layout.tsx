@@ -1,17 +1,12 @@
 "use client"
-import PdfToBase64 from '@/components/PdfToBase64'
+import { useUser } from "@clerk/nextjs"
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from "react"
-import NavMenu from '../navigation/NavMenu'
 import MobileNavMenu from '../navigation/MobileNavMenu'
-import { useUser } from "@clerk/nextjs";
+import NavMenu from '../navigation/NavMenu'
 
 export default function DashboardLayout({ children }: any) {
-    const searchParams = useSearchParams()
-    const search = searchParams.get('click')
-    const { user } = useUser();
-
     return (
         <div className="grid  min-h-screen w-full overflow-hidden lg:grid-cols-[280px_1fr] ">
             <div className="hidden border-r bg-zinc-100/40 lg:block dark:bg-zinc-800/40">

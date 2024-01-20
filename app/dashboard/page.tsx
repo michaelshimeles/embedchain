@@ -1,12 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button';
-import { useGetStoredEmbeds } from '@/utils/hook/useGetStoredEmbeds';
 import Link from 'next/link';
-import { useUser } from "@clerk/nextjs"
 const Dashboard = () => {
-    const { user } = useUser()
-    const { data, error } = useGetStoredEmbeds(user?.id!)
-
     return (
         <div className='flex flex-col w-full p-6'>
             <div className='flex justify-end'>
@@ -42,7 +37,6 @@ const Dashboard = () => {
                     </code>
                 </div>
                 <br />
-                <p>Total Embeddings: {data?.response?.length}</p>
             </div>
 
         </div>

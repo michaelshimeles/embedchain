@@ -14,7 +14,11 @@ export default authMiddleware({
     "/api/embeds",
     "/api/payments/webhook",
     "/api/perma",
+    "/api/storage/read"
   ],
+  apiRoutes:[
+    "/api/storage/read"
+  ]
 });
 
 export const config = {

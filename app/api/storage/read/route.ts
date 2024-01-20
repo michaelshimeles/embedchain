@@ -3,8 +3,8 @@ import { readEmbeddings } from "@/utils/db/read-embeds";
 import { auth } from "@clerk/nextjs";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
-  const { userId }: { userId: string | null } = auth();
+export async function POST(req: NextRequest) {
+  const { userId } = await req.json();
 
   if (!userId) {
     return new Response("Unauthorized", { status: 401 });
