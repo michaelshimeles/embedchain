@@ -10,7 +10,7 @@ export default function Home() {
       <NavBar />
       <div className='flex flex-col items-center mt-[4rem] p-3 '>
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
-          EmbedChain
+          EmbedChain AI
         </h1>
         <p className="leading-7 text-center [&:not(:first-child)]:mt-3">
           Store your Vector Embeddings Securely, Cost Effectively, & Permanently.
