@@ -19,14 +19,14 @@ export const Icons = {
 };
 
 const StorageComponent = ({ result, userId }: any) => {
-    const { data, isFetching } = useGetStoredEmbeds(userId, result);
+    const { data, isFetched } = useGetStoredEmbeds(userId, result);
 
     const responseData = data?.response || [];
     const reversedData = [...responseData].reverse();
 
     return (
         <div className="p-8">
-            {!isFetching ? <Table>
+            {isFetched && <Table>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[100px]">ID</TableHead>
@@ -47,7 +47,8 @@ const StorageComponent = ({ result, userId }: any) => {
                         </TableRow>
                     </TableBody>
                 ))}
-            </Table> : <div className="flex justify-center items-center w-full h-[50vh]"><Icons.spinner className="h-4 w-4 animate-spin" /></div>}
+            </Table>}
+            {!isFetched && <div className="flex justify-center items-center w-full h-[50vh]"><Icons.spinner className="h-4 w-4 animate-spin" /></div>}
         </div>
     );
 }
